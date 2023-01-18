@@ -4,7 +4,6 @@
 import * as React from 'react'
 
 function Board() {
-  console.log('this is being callced')
   const [squares, setSquares] = React.useState(Array(9).fill(null))
   const nextValue = calculateNextValue(squares)
   const winner = calculateWinner(squares)

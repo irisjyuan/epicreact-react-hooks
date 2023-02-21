@@ -4,27 +4,28 @@
 import * as React from 'react'
 import {fetchPokemon, PokemonInfoFallback, PokemonDataView} from '../pokemon'
 import {PokemonForm} from '../pokemon'
+import {ErrorBoundary} from 'react-error-boundary'
 
-class ErrorBoundary extends React.Component {
-  state = {error: null}
+// class ErrorBoundary extends React.Component {
+//   state = {error: null}
 
-  static getDerivedStateFromError(error) {
-    return {error}
-  }
+//   static getDerivedStateFromError(error) {
+//     return {error}
+//   }
 
-  render() {
-    const {error} = this.state
-    if (error) {
-      return (
-        <div role="alert">
-          There was an error:{' '}
-          <pre style={{whiteSpace: 'normal'}}>{error.message}</pre>
-        </div>
-      )
-    }
-    return this.props.children
-  }
-}
+//   render() {
+//     const {error} = this.state
+//     if (error) {
+//       return (
+//         <div role="alert">
+//           There was an error:{' '}
+//           <pre style={{whiteSpace: 'normal'}}>{error.message}</pre>
+//         </div>
+//       )
+//     }
+//     return this.props.children
+//   }
+// }
 
 function PokemonInfo({pokemonName}) {
   const [{status, pokemon, error}, setState] = React.useState({
